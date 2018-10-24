@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="931.0" prefWidth="1248.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="product.coding.CodingController">
+   <children>
+      <Button fx:id="importStocks" layoutX="16.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleImportStocks" prefHeight="27.0" prefWidth="81.0" text="导入库存" />
+      <TableView fx:id="takingTable" editable="true" layoutX="16.0" layoutY="69.0" prefHeight="843.0" prefWidth="1217.0">
+        <columns>
+          <TableColumn fx:id="barColumn" prefWidth="75.0" text="商品条码" visible="false" />
+          <TableColumn fx:id="codeColumn" prefWidth="192.0" text="商品编码" />
+            <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="157.0" text="商品名称" />
+            <TableColumn fx:id="specColumn" prefWidth="92.0" text="规格名称" />
+            <TableColumn fx:id="brandColumn" prefWidth="89.0" text="品牌" visible="false" />
+            <TableColumn fx:id="typeColumn" prefWidth="99.0" text="分类" />
+            <TableColumn fx:id="realityColumn" prefWidth="73.0" text="实际库存" />
+            <TableColumn fx:id="lockedColumn" prefWidth="95.0" text="锁定库存" visible="false" />
+            <TableColumn fx:id="availableColumn" prefWidth="93.0" text="可用库存" visible="false" />
+            <TableColumn fx:id="wayColumn" prefWidth="76.0" text="在途库存" visible="false" />
+            <TableColumn fx:id="takingColumn" prefWidth="91.0" text="盘点数量" />
+            <TableColumn fx:id="diffColumn" prefWidth="84.0" text="差异数量" />
+        </columns>
+      </TableView>
+      <Button fx:id="importBox" layoutX="646.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleImportBox" prefHeight="27.0" prefWidth="81.0" text="计箱导入">
+         <opaqueInsets>
+            <Insets left="10.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="exportStocks" layoutX="1146.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleExportStocks" prefHeight="27.0" prefWidth="88.0" text="导出已盘点" />
+      <Button fx:id="saveTaking" layoutX="926.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleSaveTaking" prefHeight="27.0" prefWidth="81.0" text="盘点入库">
+         <opaqueInsets>
+            <Insets left="10.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="giveUpTaking" layoutX="1013.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleGiveUpTaking" prefHeight="27.0" prefWidth="81.0" text="放弃盘点">
+         <opaqueInsets>
+            <Insets left="10.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="importPiece" layoutX="378.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleImportPiece" prefHeight="27.0" prefWidth="81.0" text="计件导入">
+         <opaqueInsets>
+            <Insets left="10.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="startTaking" layoutX="275.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleStartTaking" prefHeight="27.0" prefWidth="81.0" text="开启盘点">
+         <opaqueInsets>
+            <Insets left="10.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="undo" layoutX="839.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleUndo" prefHeight="27.0" prefWidth="81.0" text="撤销">
+         <opaqueInsets>
+            <Insets left="10.0" />
+         </opaqueInsets>
+      </Button>
+      <TextField fx:id="perBoxCount" layoutX="733.0" layoutY="24.0" prefHeight="27.0" prefWidth="46.0" text="100" />
+      <Label layoutX="779.0" layoutY="29.0" text="件/箱" />
+      <CheckBox fx:id="useNameSpec" layoutX="467.0" layoutY="30.0" mnemonicParsing="false" text="使用名称和规格匹配" />
+      <Label fx:id="totalLabel" layoutX="121.0" layoutY="31.0" text="总条数：" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</Pane>
