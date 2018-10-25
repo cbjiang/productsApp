@@ -5,6 +5,8 @@ import javafx.stage.Stage;
 
 /**
  * Created by cbjiang on 2018/10/17.
+ *
+ * @author cbjiang
  */
 public class BaseController {
 

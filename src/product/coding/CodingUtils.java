@@ -11,8 +11,11 @@ import java.util.Set;
 
 /**
  * Created by Administrator on 2018/10/23.
+ *
+ * @author cbjiang
  */
 public class CodingUtils {
+    public static String CODE_CONNECTOR = "-";
     public static final String[] ACTUALITY_TABLE_HEADER=new String[]{
             "商品条码","商品编码","商品名称","规格名称","货号","品牌","分类","实际库存","锁定库存","可用库存",
             "在途库存","品牌","制式","毛线材质","计价单位","毛线粗细","货号","材料包配线否","材质","形状",
@@ -74,8 +77,8 @@ public class CodingUtils {
         for (int i = 0; i < data.size(); i++) {
             String objCode = data.get(i).getCode();
             if(objCode!=null) {
-                String condition = objCode.split("-")[0] + "-" + objCode.split("-")[1] +
-                        ( objCode.split("-").length>2?"-":"");
+                String condition = objCode.split(CODE_CONNECTOR)[0] + CODE_CONNECTOR + objCode.split(CODE_CONNECTOR)[1] +
+                        ( objCode.split(CODE_CONNECTOR).length>2?CODE_CONNECTOR:"");
                 if (!codeConditions.contains(condition)) {
                     codeConditions.add(condition);
                 }
@@ -84,7 +87,7 @@ public class CodingUtils {
         return codeConditions;
     }
     public static Boolean compareCodeCondition(String code,String condition){
-        if(condition.endsWith("-")){
+        if(condition.endsWith(CODE_CONNECTOR)){
             return code.contains(condition);
         }else{
             return code.equals(condition);

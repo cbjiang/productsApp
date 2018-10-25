@@ -23,6 +23,8 @@ import java.util.*;
 
 /**
  * Created by cbjiang on 2018/10/17.
+ *
+ * @author cbjiang
  */
 public class CodingController extends BaseController {
 
@@ -88,7 +90,7 @@ public class CodingController extends BaseController {
 
     private List<CodingModel> stockData;
 
-    private String TOTAL_LABEL_TEXT_PRE="总条数：";
+    private static String TOTAL_LABEL_TEXT_PRE="总条数：";
 
     @FXML
     private void initialize() {

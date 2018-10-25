@@ -6,6 +6,8 @@ import javafx.beans.property.StringProperty;
 
 /**
  * Created by cbjiang on 2018/10/17.
+ *
+ * @author cbjiang
  */
 public class CodingModel {
 
